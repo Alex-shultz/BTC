@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #update grub
-sed '6s/.\{1\}$//' grub
-sed  '6s/$/ default_hugepagesz=1G hugepagesz=1G hugepages=32 spectre_v2=off nopti elevator=deadline isolcpus=1-63"/' grub
+sed '6s/.\{1\}$//' /etc/default/grub
+sed  '6s/$/ default_hugepagesz=1G hugepagesz=1G hugepages=32 spectre_v2=off nopti elevator=deadline isolcpus=1-63"/' /etc/default/grub
 grub2-mkconfig -o /boot/grub2/grub.cfg
 #install fastdpi
 rpm --import http://vasexperts.ru/centos/RPM-GPG-KEY-vasexperts.ru
