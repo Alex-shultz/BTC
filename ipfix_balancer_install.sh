@@ -27,7 +27,6 @@ IPFIX_DNSFLOW_BALANCER_SUB_PROTO[0]=tcp
  
 IPFIX_FULLFLOW_BALANCER_TASKSET[0]=61
 IPFIX_CLICKSTREAM_BALANCER_TASKSET[0]=62
-IPFIX_DNSFLOW_BALANCER_TASKSET[0]=63
-" >> /var/fast_ipfix_balancer/backend/.env
+IPFIX_DNSFLOW_BALANCER_TASKSET[0]=63" >> /var/fast_ipfix_balancer/backend/.env
 
 ipfix-balancer-restart
