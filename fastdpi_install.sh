@@ -13,7 +13,7 @@ systemctl --now enable chronyd
 
 #import configuration
 truncate -s0 /etc/dpi/fastdpi.conf 
-/etc/dpi/fastdpi.conf << EOF
+echo "
 udr=1
 ctrl_port=29000
 ctrl_dev=lo
@@ -61,4 +61,4 @@ sds_size_sock_buf=10485760
 sds_ajb_num=1
 asnum_download=1
 smartdrop=1
-EOF
+" >> /etc/dpi/fastdpi.conf
