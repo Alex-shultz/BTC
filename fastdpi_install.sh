@@ -62,3 +62,81 @@ sds_ajb_num=1
 asnum_download=1
 smartdrop=1
 " >> /etc/dpi/fastdpi.conf
+#SDS
+touch /etc/dpi/fastdpi_sagents.json
+echo "{
+        "sd_agents" :
+        [
+                {
+                        "ip" : "10.1.1.116",
+                        "port" : 29000,
+                        "speed" : "20GiBps",
+                        "ifname" : "bond0",
+                        "protocol" : 0,
+                        "controllers" :
+                        [
+                                {
+                                        "type" : 0,
+                                        "disks" :
+                                        [
+                                                {
+                                                        "speed" : "20GiBps",
+                                                        "size"  : "44000gb",
+                                                        "mount" : "/",
+                                                        "typedata" : 0
+                                                }
+                                        ]
+                                },
+                                {
+                                        "type" : 0,
+                                        "disks" :
+                                        [
+                                                {
+                                                        "speed" : "20GiBps",
+                                                        "size"  : "44000gb",
+                                                        "mount" : "/",
+                                                        "typedata" : 1
+                                                }
+                                        ]
+                                }
+
+                        ]
+                },
+                {
+                        "ip" : "10.1.1.116",
+                        "port" : 29000,
+                        "speed" : "20GiBps",
+                        "ifname" : "bond0",
+                        "protocol" : 0,
+                        "controllers" :
+                        [
+                                {
+                                        "type" : 0,
+                                        "disks" :
+                                        [
+                                                {
+                                                        "speed" : "20GiBps",
+                                                        "size"  : "44000gb",
+                                                        "mount" : "/",
+                                                        "typedata" : 0
+                                                }
+                                        ]
+                                },
+                                {
+                                        "type" : 0,
+                                        "disks" :
+                                        [
+                                                {
+                                                        "speed" : "20GiBps",
+                                                        "size"  : "44000gb",
+                                                        "mount" : "/",
+                                                        "typedata" : 1
+                                                }
+                                        ]
+                                }
+
+                        ]
+                }
+        ]
+}" >> /etc/dpi/fastdpi_sagents.json
+service fastdpi restart
