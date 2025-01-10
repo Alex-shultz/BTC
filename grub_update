@@ -1,0 +1,4 @@
+#update grub
+sed '6s/.\{1\}$//' grub
+sed  '6s/$/ default_hugepagesz=1G hugepagesz=1G hugepages=32 spectre_v2=off nopti elevator=deadline isolcpus=1-63"/' grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
