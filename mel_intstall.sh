@@ -1,5 +1,5 @@
 #!/bin/bash
-
+systemctl disable nis-domainname
 yum install epel-release -y 
 yum install perl -y
 tar -zxvf mlnx-en-23.04-1.1.3.0-rhel8.5-x86_64.tgz  
